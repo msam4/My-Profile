@@ -1,0 +1,282 @@
+/*Neutral color = --body*/
+/*Secondary color = --secondary-body*/
+/*Base 100 = --text*/
+
+:root {
+  --body: #1d3557;
+  --navbar: #e63946;
+  --text: #023047;
+  --secondary-body: #a8dadc;
+  --neutral-focus: #1216296b;
+  --last-color: #457b9d;
+  --primary: #eebbc3;
+  --accent: #d4d8f0;
+}
+
+/*There is no padding in the selector belong according to the tutorial*/
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Noto Serif', sans-serif;
+  text-align: center;
+  background: var(--body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+#navbar {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: var(--navbar);
+  padding: 20px 0;
+  font-size: 20px;
+  border-bottom: 1px solid var(--neutral-focus);
+  z-index: 10;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-links a{
+  text-decoration: none;
+  padding: 0 10px;
+  color: #f1faee;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+
+.card {
+  background: #f1faee;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  text-align: center;
+  color: var(--text);
+  margin: 30px;
+}
+
+#welcome-section {
+  margin-top: 100px;
+}
+/* #welcome-section {
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+} */
+
+/*
+#welcome-section h1 {
+  margin-top: 30vh;
+} */
+
+#welcome-section p {
+  font-size: 25px;
+  margin: 25px 0;
+  font-style: italic;
+}
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.list {
+  list-style: none;
+  text-align: left;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: 75px;
+}
+
+.list i {
+  width: 30px;
+}
+
+/* #projects {
+  background-color: var(--secondary-body);
+  color: var(--body);
+} */
+
+#projects .projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  place-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+#projects h1 {
+  border-bottom: 5px solid var(--body);
+  width: fit-content;
+  margin: auto;
+}
+
+/*Color is not changing to the accent in #projects.project-tile. Still remains as background-color. SOLVED!!*/
+
+#projects .project-tile {
+  height: 525px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--body);
+  text-decoration: none;
+  color: var(--accent);
+  border-radius: 5px;
+  box-shadow: 8px 10px 5px rgba(100, 100, 100, 0.3);
+}
+
+/*Img need to be 100% for both height and width*/
+
+#projects .project-tile img {
+  /* height: ;
+  width: ; */
+  object-fit: cover;
+}
+
+#projects .project-tile p {
+  font-size: 25px;
+  padding: 10px;
+}
+
+#projects .project-tile span {
+  opacity: 0%;
+  padding: 0 5px;
+}
+
+#projects .project-tile:hover span {
+  opacity: 100%;
+  color: var(--primary);
+  transition: opacity 0.25s ease-in;
+}
+
+.button {
+  text-decoration: none;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  padding: 0px 15px;
+  background-color: var(--body);
+  color: var(--accent);
+  font-size: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+}
+
+.button:hover {
+  background-color: var(--neutral-focus);
+  color: var(--text);
+}
+
+/* #contact {
+  background-color: var(--body);
+  color: var(--text);
+} */
+
+#contact h1 {
+  margin-top: 300px;
+}
+
+#contact .sub-header {
+  font-size: 15px;
+  font-style: italic;
+}
+
+#contact .social-medias {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  justify-content: space-around;
+  margin: auto;
+  margin-top: 30px;
+}
+
+#contact .social-media {
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.2s ease-in;
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  font-size: 22px;
+}
+
+#contact .social-media:hover {
+  transform: translateY(10px);
+}
+
+footer {
+  /* background-color: var(--body); */
+  color: #f1faee;
+  font-size: 10px;
+  padding: 30px;
+}
+
+/* @media only screen and (width < 700px) {
+  h1 {
+    font-size: 50px;
+  }
+  #projects .project-tile {
+    height: 600px;
+    width: 100%;
+  }
+} */
+
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .container {
+    width: 916px;
+  }
+}
+
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container {
+    width: 700px;
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    width: 520px;
+  }
+}
